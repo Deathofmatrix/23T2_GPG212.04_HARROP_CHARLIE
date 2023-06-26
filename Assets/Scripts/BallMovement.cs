@@ -8,6 +8,7 @@ namespace BallColourChange
     {
         [SerializeField] private Rigidbody2D rb2d;
         [SerializeField] private float speed;
+        [SerializeField] private float directionMoving;
 
         void Start()
         {
@@ -15,20 +16,20 @@ namespace BallColourChange
         }
         private void Update()
         {
-
         }
 
         // Update is called once per frame
         void FixedUpdate()
         {
-            rb2d.MovePosition(rb2d.position + Vector2.up * speed * Time.deltaTime);
+            rb2d.MovePosition(rb2d.position + Vector2.up * speed * directionMoving * Time.deltaTime);
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("ScreenBoundaries"))
             {
-                speed *= -1;
+                directionMoving = rb2d.position.y < 0 ? 1 : -1;
+                Debug.Log(directionMoving);
             }
         }
     }

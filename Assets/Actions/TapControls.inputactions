@@ -1,0 +1,45 @@
+{
+    "name": "TapControls",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "2f72abda-6038-4aa4-9e7c-d4ebaad84f64",
+            "actions": [
+                {
+                    "name": "ChangeColour",
+                    "type": "Button",
+                    "id": "a865b0f7-01f1-41a4-b0ee-6c4c217f99d1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cc459cca-80a4-44b0-97d6-4d4a4024f4a5",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeColour",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0bdac5ca-b09c-457b-a081-8d3ea60c8d22",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeColour",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
