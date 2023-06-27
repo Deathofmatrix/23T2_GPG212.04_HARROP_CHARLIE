@@ -8,6 +8,7 @@ namespace BallColourChange
     {
         [SerializeField] private Rigidbody2D rb2d;
         [SerializeField] private float speed;
+        [SerializeField] private AnimationCurve speedCurve;
         [SerializeField] private float directionMoving;
 
         void Start()
@@ -21,6 +22,7 @@ namespace BallColourChange
         // Update is called once per frame
         void FixedUpdate()
         {
+            speed = speedCurve.Evaluate(Time.time);
             rb2d.MovePosition(rb2d.position + Vector2.up * speed * directionMoving * Time.deltaTime);
         }
 

@@ -925,7 +925,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
-  speed: 1
+  speed: 4
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 5
+      inSlope: 0.028628254
+      outSlope: 0.028628254
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.05549032
+    - serializedVersion: 3
+      time: 60
+      value: 10
+      inSlope: 0.19369224
+      outSlope: 0.19369224
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.044662666
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   directionMoving: 1
 --- !u!114 &930897160
 MonoBehaviour:
@@ -943,6 +967,54 @@ MonoBehaviour:
   color2: {r: 0, g: 0.015686275, b: 0.7058824, a: 1}
   isColourOne: 1
   spriteRenderer: {fileID: 0}
+--- !u!1 &1640980145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1640980147}
+  - component: {fileID: 1640980146}
+  m_Layer: 0
+  m_Name: Enemy Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1640980146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640980145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92a666b26991344bb0750752d255e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 9192458048268486562, guid: d885cf93d12961b4483d70b5266ce86c, type: 3}
+  - {fileID: 917918232277933522, guid: 64db5e0161e84ef4e903a46355124bf6, type: 3}
+  enemyInterval: 1
+--- !u!4 &1640980147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640980145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650578597
 GameObject:
   m_ObjectHideFlags: 0
