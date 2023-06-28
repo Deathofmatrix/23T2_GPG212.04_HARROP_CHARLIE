@@ -32,14 +32,14 @@ namespace BallColourChange
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerStay2D(Collider2D collision)
         {
             if (collision.CompareTag("Enemy"))
             {
                 bool enemyColour = collision.GetComponent<Enemy>().isColourOne;
                 if (isColourOne != enemyColour)
                 {
-                    Destroy(gameObject);
+                    gameObject.SetActive(false);
                 }
             }
         }

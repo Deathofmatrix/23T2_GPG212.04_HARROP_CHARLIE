@@ -30,8 +30,10 @@ namespace BallColourChange
 
         private void TouchPressed(InputAction.CallbackContext context)
         {
-            player.GetComponent<ColourChange>().OnTouch();
-
+            if (player != null)
+            {
+                player.GetComponent<ColourChange>().OnTouch();
+            }
         }
     }
 }

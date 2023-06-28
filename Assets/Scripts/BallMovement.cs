@@ -11,15 +11,14 @@ namespace BallColourChange
         [SerializeField] private AnimationCurve speedCurve;
         [SerializeField] private float directionMoving;
 
+        public delegate void PlayerDeathAction();
+        public static event PlayerDeathAction OnPlayerDeath;
+
         void Start()
         {
             rb2d = GetComponent<Rigidbody2D>();
         }
-        private void Update()
-        {
-        }
 
-        // Update is called once per frame
         void FixedUpdate()
         {
             speed = speedCurve.Evaluate(Time.time);
@@ -33,6 +32,13 @@ namespace BallColourChange
                 directionMoving = rb2d.position.y < 0 ? 1 : -1;
                 Debug.Log(directionMoving);
             }
+        }
+
+        private void OnDisable()
+        {
+            OnPlayerDeath?.Invoke();
+
+            Debug.Log("character disabled");
         }
     }
 }
