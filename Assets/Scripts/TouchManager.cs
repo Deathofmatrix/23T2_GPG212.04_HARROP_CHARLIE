@@ -8,6 +8,7 @@ namespace BallColourChange
     public class TouchManager : MonoBehaviour
     {
         [SerializeField] private GameObject player;
+        [SerializeField] private GameObject tutorialManager;
         private PlayerInput playerInput;
 
         private InputAction touchPressAction;
@@ -33,6 +34,11 @@ namespace BallColourChange
             if (player != null)
             {
                 player.GetComponent<ColourChange>().OnTouch();
+            }
+
+            if (tutorialManager != null)
+            {
+                tutorialManager.GetComponent<TutorialManager>().ExitTutorialCollider();
             }
         }
     }

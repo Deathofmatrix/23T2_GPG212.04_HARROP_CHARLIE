@@ -1,7 +1,9 @@
+using EasyAudioSystem;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace BallColourChange
 {
@@ -61,11 +63,23 @@ namespace BallColourChange
         {
             loseScreenCanvasGroup.alpha = 0;
             loseScreenCanvas.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("Death");
 
             while (loseScreenCanvasGroup.alpha < 1)
             {
                 loseScreenCanvasGroup.alpha += 1 * Time.deltaTime;
                 yield return null;
+            }
+        }
+
+        private void Update()
+        {
+            if (SceneManager.GetActiveScene().name == "MainScene")
+            {
+                if (loseScreenCanvas.activeInHierarchy == true)
+                {
+                    AudioManager.instance.Pause("MainTheme");
+                }
             }
         }
     }

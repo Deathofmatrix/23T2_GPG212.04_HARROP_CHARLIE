@@ -1,3 +1,4 @@
+using EasyAudioSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,7 @@ namespace BallColourChange
         public void OnTouch()
         {
             Debug.Log("changecolour");
+            FindObjectOfType<AudioManager>().Play("ColourChange");
             if (isColourOne)
             {
                 spriteRenderer.color = color2;

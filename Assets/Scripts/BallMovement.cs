@@ -1,3 +1,4 @@
+using EasyAudioSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,7 @@ namespace BallColourChange
 
         void FixedUpdate()
         {
-            speed = speedCurve.Evaluate(Time.time);
+            speed = speedCurve.Evaluate(Time.timeSinceLevelLoad);
             rb2d.MovePosition(rb2d.position + Vector2.up * speed * directionMoving * Time.deltaTime);
         }
 
@@ -29,6 +30,7 @@ namespace BallColourChange
         {
             if (collision.gameObject.CompareTag("ScreenBoundaries"))
             {
+                FindObjectOfType<AudioManager>().Play("Bounce");
                 directionMoving = rb2d.position.y < 0 ? 1 : -1;
                 Debug.Log(directionMoving);
             }

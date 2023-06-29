@@ -9,6 +9,7 @@ namespace BallColourChange
     {
         [SerializeField] private SpriteRenderer spriteRenderer;
         public bool isColourOne;
+        [SerializeField] private bool isTutorialMode = false;
         [SerializeField] private float speed;
 
         [SerializeField] private Color colourOne;
@@ -18,8 +19,11 @@ namespace BallColourChange
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
 
-            int randomColour = Random.Range(1, 3);
-            isColourOne = randomColour == 1 ? true : false;
+            if (!isTutorialMode)
+            {
+                int randomColour = Random.Range(1, 3);
+                isColourOne = randomColour == 1 ? true : false;
+            }
 
             spriteRenderer.color = isColourOne ? colourOne : colourTwo;
         }

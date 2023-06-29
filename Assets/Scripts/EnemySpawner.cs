@@ -17,7 +17,7 @@ namespace BallColourChange
 
         private void SpawnEnemy()
         {
-            if (Time.time > 60)
+            if (Time.timeSinceLevelLoad > 60)
             {
                 float yPosition1 = Random.Range(1, 3.5f);
                 float yPosition2 = Random.Range(-3.5f,-1);

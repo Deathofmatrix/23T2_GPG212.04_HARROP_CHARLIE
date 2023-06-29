@@ -13,7 +13,7 @@ namespace BallColourChange
 
         void FixedUpdate()
         {
-            float xScrollSpeed = Time.time * curveTimeMultiplier;
+            float xScrollSpeed = Time.timeSinceLevelLoad * curveTimeMultiplier;
             image.uvRect = new Rect(image.uvRect.position + new Vector2(scrollCurve.Evaluate(xScrollSpeed), 0) * Time.deltaTime, image.uvRect.size);
         }
     } 

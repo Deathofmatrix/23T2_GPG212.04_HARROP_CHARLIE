@@ -18,9 +18,9 @@ namespace BallColourChange
 
         private void Update()
         {
-            float milliseconds = (Time.timeSinceLevelLoad % 1) * 100; 
-            float seconds = Time.timeSinceLevelLoad % 60;
-            float minutes = seconds / 60;
+            float milliseconds = Mathf.FloorToInt((Time.timeSinceLevelLoad % 1) * 100); 
+            float seconds = Mathf.FloorToInt(Time.timeSinceLevelLoad % 60);
+            float minutes = Mathf.FloorToInt(Time.timeSinceLevelLoad / 60);
             currentTimeText.text = $"{minutes:00}:{seconds:00}:{milliseconds:00}";
         }
 
