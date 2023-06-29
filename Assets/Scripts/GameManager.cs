@@ -9,7 +9,6 @@ namespace BallColourChange
     {
         [SerializeField] private GameObject playerCharacter;
         [SerializeField] private GameObject loseScreenCanvas;
-        [SerializeField] private TextMeshProUGUI finalTimeText;
 
         private CanvasGroup loseScreenCanvasGroup;
 
@@ -20,6 +19,7 @@ namespace BallColourChange
 
         private void Start()
         {
+            Time.timeScale = 1;
             loseScreenCanvas.SetActive(false);
             loseScreenCanvasGroup = loseScreenCanvas.GetComponent<CanvasGroup>();
             initialTimeScale = Time.timeScale;
